@@ -119,7 +119,7 @@ $db = PDODb::getInstance(DB_TYPE, DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
         <footer class="footer">
             <div class="container-fluid">
                 <div class="text-dark">
-                    <span class="copyright">GMES-WeMAST © 2018 | All Rights Reserved</span>
+                    <span class="copyright">GMES-WeMAST © 2020 | All Rights Reserved</span>
                     <div class="float-right bg-white">
                         <?= HTML::assets_img('consortium_min_sasscal.png', 'max-height: 60px;') ?>
                     </div>
