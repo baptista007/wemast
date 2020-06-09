@@ -22,10 +22,10 @@ if ($basin) {
           <h5 class="card-title">Basin Specifications</h5>
           <div class="card-text">
             <div class="form-group">
-                Country: <?= $basin['countries'] ?>
+                <strong>Country:</strong> <?= $basin['countries'] ?>
             </div>
             <div class="form-group">
-                Area (km2): <?= number_format($basin['area'], 2) ?>
+                <strong>Area (km2):</strong> <?= number_format($basin['area'], 2) ?>
             </div>
           </div>
           
