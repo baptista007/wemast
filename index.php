@@ -36,17 +36,17 @@ $db = PDODb::getInstance(DB_TYPE, DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
             <header id="header"> 
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-3 col-xs-2">
+                        <div class="col-lg-3 col-xs-12">
                             <a href="http://wemast.sasscal.org/" title="GMES-WeMAST" class="logo" style="height: 135px;">
                                 <?= HTML::assets_img('gmes-logo.png', 'float: left;max-height: 75px;') ?>
                             </a>
                         </div>
-                        <div class="col-lg-6 col-xs-8 text-center">
+                        <div class="col-lg-6 col-xs-12 text-center">
                             <h1 style="font-family:Tahoma, Geneva, sans-serif; font-size:22px; color:#2e3192; margin-top: 15px;">
                                 Wetland Monitoring and Assessment Service for Transboundary Basins
                             </h1>
                         </div>
-                        <div class="col-lg-3 col-xs-3">
+                        <div class="col-lg-3 col-xs-12">
                             <div style="float: right;">
                                 <?= HTML::assets_img('wemast_logo_website.png', 'display: inline-block;max-height: 75px;') ?>
                                 <a href="http://www.sasscal.org/" target="_blank">
