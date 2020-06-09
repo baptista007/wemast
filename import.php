@@ -85,7 +85,7 @@ if (($handle = fopen(dirname(__FILE__) . "/dataset/wetland_seasonal.csv", "r")) 
         if ($wetland) {
             $season = explode("_", $data[2]);
             $start = $season[0];
-            $stop = "19" . end($season);
+            $stop = (intval(end($season)) > 20 ? "19" : "20" ) . end($season);
             
             $values = array(
                 'wetland_id' => $wetland['id'],

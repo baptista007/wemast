@@ -8,7 +8,6 @@ $db = PDODb::getInstance(DB_TYPE, DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
         <meta charset="UTF-8">
         <title>WeMAST Geoportal</title>
         <?= HTML::page_css('bootstrap.min.css') ?>
-        <?= HTML::page_css('styletext.css') ?>
         <?= HTML::page_css('style.css') ?>
         <?= HTML::page_css('all.min.css') ?>
 
@@ -30,19 +29,35 @@ $db = PDODb::getInstance(DB_TYPE, DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
             #main {
                 border-bottom: 2px solid #2e3192;
                 min-height: 60px;
+                padding-bottom: 2px;
             }
         </style>
     </head>
     <body class="home page-template-default page page-id-264 tribe-js">
         <div id="main">
             <header id="header"> 
-                <p style="margin: 16px;text-align:center; font-family:Tahoma, Geneva, sans-serif; font-size:20px; font-size:2vw; color:#2e3192">              
-                    <a href="http://wemast.sasscal.org/" title="GMES-WeMAST" class="logo" style="height: 135px;">
-                        <?= HTML::assets_img('gmes-logo.png', 'float: left;max-height: 75px;max-width: 175px;margin: -14px;') ?>
-                    </a>
-                    Wetland Monitoring and Assessment Service for Transboundary Basins
-                    <?= HTML::assets_img('wemast_logo_website.png', 'float: right;max-height: 75px;max-width: 95px;margin: -14px;') ?>
-                </p>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-3 col-xs-2">
+                            <a href="http://wemast.sasscal.org/" title="GMES-WeMAST" class="logo" style="height: 135px;">
+                                <?= HTML::assets_img('gmes-logo.png', 'float: left;max-height: 75px;') ?>
+                            </a>
+                        </div>
+                        <div class="col-lg-6 col-xs-8 text-center">
+                            <h1 style="font-family:Tahoma, Geneva, sans-serif; font-size:22px; color:#2e3192; margin-top: 15px;">
+                                Wetland Monitoring and Assessment Service for Transboundary Basins
+                            </h1>
+                        </div>
+                        <div class="col-lg-3 col-xs-3">
+                            <div style="float: right;">
+                                <?= HTML::assets_img('wemast_logo_website.png', 'display: inline-block;max-height: 75px;') ?>
+                                <a href="http://www.sasscal.org/" target="_blank">
+                                    <?= HTML::assets_img('sasscal_with_website_white.png', 'display: inline-block;max-height: 75px;') ?>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </header>
         </div>
         <div id="wemastgeo" style="border:0; min-height: 80vh; overflow: auto;">
@@ -93,7 +108,7 @@ $db = PDODb::getInstance(DB_TYPE, DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
                             </div>
                         </div>
                     </div>
-                    <div class="p2" id="dynamic-content-panel" style="max-height: 45vh; overflow: auto;">
+                    <div class="p2" id="dynamic-content-panel" style="max-height: 40vh; overflow: auto;">
 
                     </div>
                 </div>
@@ -103,10 +118,13 @@ $db = PDODb::getInstance(DB_TYPE, DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
                 <!--<iframe src="http://197.188.227.173:9090/wemastgeoportal/wemast.html" style="width: 100%; min-height: 80vh;"></iframe>-->
             </div>
         </div>
-        <footer id="footer" role="contentinfo">
-            <div class="fluid-container">
-                <div class="text-white">
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="text-dark">
                     <span class="copyright">GMES-WeMAST © 2018 | All Rights Reserved</span>
+                    <div class="float-right bg-white">
+                        <?= HTML::assets_img('consortium_min_sasscal.png', 'max-height: 60px;') ?>
+                    </div>
                 </div>
             </div>
         </footer>
@@ -122,14 +140,14 @@ $db = PDODb::getInstance(DB_TYPE, DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
         <script type="text/javascript">
             function collapseFilter() {
                 if ($('#main-filter').is(':visible')) {
-                    
-                    $('#main-filter').addClass('collapse').animate({width: "0"}, 'slow', 'swing', function() {
+
+                    $('#main-filter').addClass('collapse').animate({width: "0"}, 'slow', 'swing', function () {
                         $(this).css('display', 'none');
                         $('#basin_select').val('').trigger('change');
                         $('#min-filter').animate({width: "2rem"}).css('display', 'flex');
                     });
                 } else {
-                    $('#min-filter').animate({width: "0"}, 'slow', 'swing', function() {
+                    $('#min-filter').animate({width: "0"}, 'slow', 'swing', function () {
                         $(this).css('display', 'none');
                         $('#main-filter').css('display', 'flex').animate({width: "20rem"});
                     });
@@ -142,7 +160,7 @@ $db = PDODb::getInstance(DB_TYPE, DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
                         doGet('get_basin_wetlands.php?id=' + this.value, function (data) {
                             $('#wetland_select').html(data);
                         });
-                        
+
                         doGet('get_basin_panel.php?id=' + this.value, function (data) {
                             $('#dynamic-content-panel').html(data);
                         });
@@ -151,7 +169,7 @@ $db = PDODb::getInstance(DB_TYPE, DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
                         $('#wetland_select').html('<option value="">-select basin-</option>');
                     }
                 });
-                
+
                 $('#wetland_select').on('change', function () {
                     if (!isEmpty($(this).val())) {
                         doGet('get_wetland_panel.php?id=' + this.value, function (data) {
