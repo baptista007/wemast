@@ -22,15 +22,6 @@ if ($wetland) {
           <h5 class="card-title">Wetland Specifications</h5>
           <div class="card-text">
             <div class="form-group">
-                Country: <?= $wetland['country'] ?>
-            </div>
-            <div class="form-group">
-                State: <?= $wetland['state'] ?>
-            </div>
-            <div class="form-group">
-                Basin: <?= $wetland['basin'] ?>
-            </div>
-            <div class="form-group">
                 Perimeter: <?= number_format($wetland['perimeter'], 2) ?>
             </div>
             <div class="form-group">
