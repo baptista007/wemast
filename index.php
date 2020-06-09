@@ -106,7 +106,7 @@ $db = PDODb::getInstance(DB_TYPE, DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
                             </div>
                         </div>
                     </div>
-                    <div class="p2" id="dynamic-content-panel" style="max-height: 40vh; overflow: auto;">
+                    <div class="p2" id="dynamic-content-panel" style="max-height: 35vh; overflow: auto;">
 
                     </div>
                 </div>
