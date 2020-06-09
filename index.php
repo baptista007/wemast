@@ -113,7 +113,7 @@ $db = PDODb::getInstance(DB_TYPE, DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
             </div>
             <div class="clearfix"></div>
             <div class="main-content">
-                <!--<iframe src="http://197.188.227.173:9090/wemastgeoportal/wemast.html" style="width: 100%; min-height: 80vh;"></iframe>-->
+                <iframe src="http://197.188.227.173:9090/wemastgeoportal/wemast.html" style="width: 100%; min-height: 80vh;"></iframe>
             </div>
         </div>
         <footer class="footer">
