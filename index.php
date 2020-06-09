@@ -6,16 +6,14 @@ $db = PDODb::getInstance(DB_TYPE, DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Wetland Monitoring and Assessment Service for Transboundary Basins">
+        <meta name="author" content="SASSCAL">
+        <link rel="icon" href="assets/img/gmes-logo-ico.png">
         <title>WeMAST Geoportal</title>
         <?= HTML::page_css('bootstrap.min.css') ?>
-        <?= HTML::page_css('style.css') ?>
         <?= HTML::page_css('all.min.css') ?>
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.js"></script>
-        <script src="https://cdn.maptiler.com/mapbox-gl-js/v1.5.1/mapbox-gl.js"></script>
-        <script src="https://cdn.maptiler.com/mapbox-gl-leaflet/latest/leaflet-mapbox-gl.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css" />
-        <link rel="stylesheet" href="https://cdn.maptiler.com/mapbox-gl-js/v1.5.1/mapbox-gl.css" />
+        <?= HTML::page_css('style.css') ?>
         <style>
             #mapid {
                 width: 100%;
@@ -135,7 +133,6 @@ $db = PDODb::getInstance(DB_TYPE, DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
         <?= HTML::page_js('jquery-2.1.4.min.js') ?>
         <?= HTML::page_js('bootstrap.min.js') ?>
         <?= HTML::page_js('common.js') ?>
-
 
         <script type="text/javascript">
             function collapseFilter() {
